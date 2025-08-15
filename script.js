@@ -5,11 +5,11 @@ var resumeString = "<img src='icons/resume.png' class='resumeThumbnail'><div cla
 
 var addressString = "<div class='mapview'><iframe src='https://www.google.com/maps/dir//Moodbidri+private+Bus+Stand,+Bus+Stand+Rd,+Mudbidri,+Karnataka+574227/@13.0639,74.9991985,15z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3ba4ab3d49331379:0x17be05cb5b69caa2!2m2!1d74.9957298!2d13.0680955?hl=en' class='map'></iframe></div><label class='add'><address>B2 'Asara'<br>Kodoli<br>Kolhapur, Maharashtra, INDIA 416114</address>";
 
-window.onload = startFunction; // Ensures the function runs on page load
+window.onload = startFunction;
 
 function startFunction() {
-    setLastSeen();  // Updates the last seen time
-    waitAndResponce("intro");  // Sends the intro message
+    setLastSeen();
+    waitAndResponce("intro");
 }
 
 function setLastSeen() {
@@ -75,9 +75,6 @@ function waitAndResponce(inputText) {
     var name = "";
     if (inputText.toLowerCase().includes("my name is")) {
         name = inputText.substring(inputText.indexOf("is") + 2);
-        if (name.toLowerCase().includes("john")) {
-            sendTextMessage("Ohh! That's my name too");
-        }
         inputText = "input";
     }
     switch (inputText.toLowerCase().trim()) {
@@ -88,7 +85,33 @@ function waitAndResponce(inputText) {
             break;
 
         case "help":
-            sendTextMessage("<span class='sk'>Send Keyword to get what you want to know about me...<br>e.g<br><span class='bold'>'skills'</span> - to know my skills<br><span class='bold'>'resume'</span> - to get my resume<br><span class='bold'>'education'</span> - to get my education details<br><span class='bold'>'contact'</span> - to get ways to connect with me<br><span class='bold'>'projects'</span> - to get details of my projects<br><span class='bold'>'interests'</span> - to know about my interests<br><span class='bold'>'clear'</span> - to clear conversation<br>");
+            sendTextMessage("<span class='sk'>Send Keyword to get what you want to know about me...<br>e.g<br><span class='bold'>'skills'</span> - to know my skills<br><span class='bold'>'resume'</span> - to get my resume<br><span class='bold'>'education'</span> - to get my education details<br><span class='bold'>'contact'</span> - to get ways to connect with me<br><span class='bold'>'projects'</span> - to get details of my projects<br><span class='bold'>'interests'</span> - to know about my interests<br><span class='bold'>'key strengths'</span> - to know my strengths<br><span class='bold'>'clear'</span> - to clear conversation<br><span class='bold'>'time'</span> - to get current time<br><span class='bold'>'date'</span> - to get current date<br><span class='bold'>'greetings'</span> - for different greetings<br>");
+            break;
+
+        case "key strengths":
+            sendTextMessage("<span class='sk'>Some of my key strengths include:<br><br><span class='bold'>- Time Management<br>- Teamwork<br>- Problem-solving<br>- Adaptability<br>- Strong communication skills<br>- Analytical thinking</span>");
+            break;
+
+        case "greetings":
+            sendTextMessage("Here are some greetings you can use:<br><br>'Hi', 'Hello', 'Good morning', 'Good afternoon', 'Good evening', 'Good night'");
+            break;
+
+        case "hi":
+        case "hello":
+        case "hlo":
+        case "good morning":
+        case "good afternoon":
+        case "good evening":
+        case "good night":
+            sendTextMessage("Hello there 👋🏻! How can I help you today?");
+            break;
+
+        case "github":
+            sendTextMessage("You can check my GitHub here: <a target='_blank' href='https://github.com/sharmila1320'>Sharmila Rapeti GitHub</a>");
+            break;
+
+        case "more skills":
+            sendTextMessage("<span class='sk'>My core skills and concepts include:<br><br><span class='bold'>Data Structures & Algorithms (DSA)<br>Object-Oriented Programming (OOPS)<br>Database Management (DBMS)<br>Operating Systems (OS)<br>C++<br>Python<br>HTML<br>CSS<br>Tailwind CSS<br>JavaScript<br>React.js<br><br>MERN Stack (Beginner proficiency)<br>MySQL<br>PostgreSQL<br>Version Control (Git, GitHub)<br>Deployment (Vercel)</span>");
             break;
 
         case "resume":
@@ -127,41 +150,6 @@ function waitAndResponce(inputText) {
         case "date":
             var date = new Date();
             sendTextMessage("Current date is " + date.getDate() + "/" + date.getMonth() + "/" + date.getFullYear());
-            break;
-
-        case "hai":
-            sendTextMessage("Hello there 👋🏻");
-            sendTextMessage("<span class='sk'>Send Keyword to get what you want to know about me...<br>e.g<br><span class='bold'>'skills'</span> - to know my skills<br><span class='bold'>'resume'</span> - to get my resume<br><span class='bold'>'education'</span> - to get my education details<br><span class='bold'>'contact'</span> - to get ways to connect with me<br><span class='bold'>'projects'</span> - to get details of my projects<br><span class='bold'>'interests'</span> - to know about my interests<br><span class='bold'>'clear'</span> - to clear conversation<br>");
-            break;
-
-        case "hello":
-            sendTextMessage("Hello there 👋🏻");
-            sendTextMessage("<span class='sk'>Send Keyword to get what you want to know about me...<br>e.g<br><span class='bold'>'skills'</span> - to know my skills<br><span class='bold'>'resume'</span> - to get my resume<br><span class='bold'>'education'</span> - to get my education details<br><span class='bold'>'contact'</span> - to get ways to connect with me<br><span class='bold'>'projects'</span> - to get details of my projects<br><span class='bold'>'interests'</span> - to know about my interests<br><span class='bold'>'clear'</span> - to clear conversation<br>");
-            break;
-
-        case "Sharmila":
-            sendTextMessage("Yes, that's me");
-            break;
-
-        case "Sharmila Rapeti":
-            sendTextMessage("Yes, that's me");
-            break;
-
-        case "website":
-            sendTextMessage("You can check my website here <a target='_blank' href='https://github.com/sharmila1320'>Sharmila Rapeti</a>");
-            break;
-
-        case "github":
-            sendTextMessage("You can check my github here <a target='_blank' href='https://github.com/sharmila1320'>Sharmila Rapeti</a>");
-            break;
-
-        case "linkedin":
-            sendTextMessage("You can check my linkedin here <a target='_blank' href='https://www.linkedin.com/in/sharmilarapeti'>Sharmila Rapeti</a>");
-            break;
-
-        case "friends":
-        case "friend":
-            sendTextMessage("I am always ready to make new friends");
             break;
 
         case "input":
