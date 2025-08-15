@@ -1,5 +1,5 @@
 var audio = new Audio('sounds/assets_sentmessage.mp3');
-var contactString = "<div class='social'> <a target='_blank' href='tel:+91-8341251461'> <div class='socialItem' id='call'><img class='socialItemI' src='icons/phone.png'/><label class='number'>+91 83412 51461</label></div> </a> <a href='mailto:sharmilarapeti1451@gmail.com'> <div class='socialItem'><img class='socialItemI' src='icons/gmail_icon.png' alt=''></div> </a> <a target='_blank' href='https://wa.me/918341251461'> <div class='socialItem'><img class='socialItemI' src='icons/whatsapp_icon.png' alt=''></div> </a> </div>";
+var contactString = "<div class='social'> <a target='_blank' href='tel:+918341251461'> <div class='socialItem' id='call'><img class='socialItemI' src='icons/phone.png'/><label class='number'>+91 83412 51461</label></div> </a> <a href='mailto:sharmilarapeti1451@gmail.com'> <div class='socialItem'><img class='socialItemI' src='icons/gmail_icon.png' alt=''></div> </a> <a target='_blank' href='https://wa.me/918341251461'> <div class='socialItem'><img class='socialItemI' src='icons/whatsapp_icon.png' alt=''></div> </a> </div>";
 
 var resumeString = "<img src='icons/resume.png' class='resumeThumbnail'><div class='downloadSpace'><div class='pdfname'><img src='icons/pdf_icon.png'><label>Sharmila Rapeti - Combined Resume (SWE + SDE)</label></div><a href='resume/sharmila_rapeti_combined.pdf' download='Sharmila_Rapeti_Combined.pdf'><img class='download' src='icons/download_icon.png'></a></div>";
 
@@ -79,14 +79,16 @@ function waitAndResponce(inputText) {
         inputText = "input";
     }
     switch (inputText.toLowerCase().trim()) {
-        case "intro":
-            setTimeout(() => {
-                sendTextMessage("Hello there 👋🏻,<br><br>My name is <span class='bold'><a class='alink'>Sharmila Rapeti</a>.</span><br><br>I am an Electronics & Communication Engineering student at <span class='bold'>NIT Silchar👨🏻‍💻.</span><br><br>I am eager to hear about potential career opportunities, so I would be pleased to chat about job openings in the engineering sphere.<br><br>Send <span class='bold'>'help'</span> to know more about me.<br>");
-            }, 2000);
+        case "hi":
+        case "hello":
+        case "good morning":
+        case "good afternoon":
+        case "good evening":
+            sendTextMessage("Hello there 👋🏻! How can I assist you today?");
             break;
 
         case "help":
-            sendTextMessage("<span class='sk'>Send Keyword to get what you want to know about me...<br>e.g<br><span class='bold'>'skills'</span> - to know my skills<br><span class='bold'>'resume'</span> - to get my resume<br><span class='bold'>'education'</span> - to get my education details<br><span class='bold'>'contact'</span> - to get ways to connect with me<br><span class='bold'>'projects'</span> - to get details of my projects<br><span class='bold'>'interests'</span> - to know about my interests<br><span class='bold'>'clear'</span> - to clear conversation<br>");
+            sendTextMessage("<span class='sk'>Send Keyword to get what you want to know about me...<br>e.g<br><span class='bold'>'skills'</span> - to know my skills<br><span class='bold'>'resume'</span> - to get my resume<br><span class='bold'>'education'</span> - to get my education details<br><span class='bold'>'contact'</span> - to get ways to connect with me<br><span class='bold'>'projects'</span> - to get details of my projects<br><span class='bold'>'interests'</span> - to know about my interests<br><span class='bold'>'clear'</span> - to clear conversation<br><span class='bold'>'version control'</span> - to get my version control details<br><span class='bold'>'git account'</span> - to get my GitHub account details<br><span class='bold'>'portfolio account'</span> - to get my portfolio details<br>");
             break;
 
         case "resume":
@@ -94,7 +96,7 @@ function waitAndResponce(inputText) {
             break;
 
         case "skills":
-            sendTextMessage("<span class='sk'>I am currently pursuing B.Tech degree in Electronics & Communication Engineering.<br><br>I can comfortably write code in following languages :<br><span class='bold'>C++<br>Python<br>HTML<br>CSS<br>JavaScript</span><br><br>I am well versed with following frameworks :<span class='bold'><br>ReactJs</span><br>");
+            sendTextMessage("<span class='sk'>I am currently pursuing B.Tech degree in Electronics & Communication Engineering.<br><br>I can comfortably write code in following languages :<br><span class='bold'>C++<br>Python<br>HTML<br>CSS<br>JavaScript</span><br><br>I am well versed with the following frameworks :<span class='bold'><br>React.js</span><br><br>**CS Fundamentals:** DSA, OOPS, DBMS, OS<br><br>**Deep Learning Frameworks:** CNNs, GNNs<br><br>**Key Strengths:** Teamwork, Problem-Solving, Communication Skills<br><br>**Databases:** MySQL, PostgreSQL, MongoDB<br><br>**Tools/Technologies:** OpenCV, Git, VS Code<br><br>**Web Development:** Express.js, Node.js, React.js (MERN stack, basic proficiency)");
             break;
 
         case "education":
